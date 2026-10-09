@@ -1,0 +1,90 @@
+:root{
+  --bg:#f6f4ef; --card:#fff; --ink:#26302c; --muted:#6b7670; --line:#e3dfd5;
+  --accent:#3f7d6b; --accent-soft:#e2f0eb; --warn:#c2693a;
+  --c-curry:#d9822b; --c-salad:#4a9a5b; --c-dessert:#c9577f;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#171b19; --card:#212725; --ink:#e8ece9; --muted:#9aa5a0; --line:#323a37;
+    --accent:#6dbfa5; --accent-soft:#25382f; --warn:#e0925f; }
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:17px/1.5 "Noto Sans TC","Microsoft JhengHei",system-ui,sans-serif}
+.top{padding:20px 16px 4px;max-width:1280px;margin:0 auto}
+.top h1{margin:0;font-size:26px}
+.sub{margin:4px 0 0;color:var(--muted)}
+.cols{display:grid;grid-template-columns:repeat(var(--n,3),minmax(0,1fr));gap:14px;
+  max-width:1280px;margin:0 auto;padding:14px 16px 24px}
+@media (max-width:900px){.cols{grid-template-columns:1fr}}
+
+.col{background:var(--card);border:1px solid var(--line);border-radius:12px;
+  border-top:4px solid var(--cat);display:flex;flex-direction:column;min-width:0}
+.col[data-cat="咖哩"]{--cat:var(--c-curry)}
+.col[data-cat="沙拉"]{--cat:var(--c-salad)}
+.col[data-cat="甜點"]{--cat:var(--c-dessert)}
+.col-head{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:12px 14px 8px}
+.col h2{margin:0;font-size:21px}
+.tools{display:flex;gap:6px}
+button{font:inherit;border:1px solid var(--line);background:transparent;color:inherit;
+  padding:4px 10px;border-radius:8px;cursor:pointer}
+button:hover{background:var(--accent-soft)}
+
+.list{max-height:222px;overflow:auto;border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);margin:0;padding:0;list-style:none}
+.list li label{display:flex;align-items:center;gap:8px;padding:5px 14px;cursor:pointer}
+.list li label:hover{background:var(--accent-soft)}
+.list .nm{flex:1;min-width:0}
+.list .meta{color:var(--muted);font-size:14px;white-space:nowrap}
+.list input{accent-color:var(--cat);width:18px;height:18px}
+
+.result{padding:12px 14px 14px}
+.summary{color:var(--muted);margin:0 0 8px}
+.summary b{color:var(--ink)}
+.empty{color:var(--muted);margin:0}
+.ing{padding:8px 0;border-top:1px dashed var(--line)}
+.ing:first-child{border-top:0}
+.ing-head{display:flex;align-items:center;gap:8px}
+.ing-name{font-weight:600}
+.badge{background:var(--cat);color:#fff;border-radius:999px;padding:0 10px;font-size:16px;font-weight:600;line-height:26px}
+.bar{flex:1;height:6px;border-radius:3px;background:var(--line);overflow:hidden}
+.bar i{display:block;height:100%;background:var(--cat)}
+.chips{display:flex;flex-wrap:wrap;gap:5px;margin-top:5px}
+.chip{font-size:15px;background:var(--accent-soft);border-radius:6px;padding:1px 7px}
+.chip small{color:var(--muted)}
+.single{margin-top:10px;font-size:13px;color:var(--muted)}
+.single summary{cursor:pointer}
+footer{max-width:1280px;margin:0 auto;padding:0 16px 24px;color:var(--muted);font-size:14px}
+
+.catbar{max-width:1280px;margin:0 auto;padding:12px 16px 0;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.cats-label{color:var(--muted)}
+.cat-toggle{display:inline-flex;align-items:center;gap:6px;padding:5px 14px;border-radius:999px;
+  border:1.5px solid var(--cat);cursor:pointer;user-select:none}
+.cat-toggle:has(input:checked){background:var(--cat);color:#fff}
+.cat-toggle input{display:none}
+.cat-toggle[data-cat="咖哩"]{--cat:var(--c-curry)}
+.cat-toggle[data-cat="沙拉"]{--cat:var(--c-salad)}
+.cat-toggle[data-cat="甜點"]{--cat:var(--c-dessert)}
+.sec{margin-top:12px;padding-top:8px;border-top:1px solid var(--line)}
+.sec h3{margin:0 0 4px;font-size:15px;color:var(--muted);font-weight:600}
+.pad{padding:20px 16px;grid-column:1/-1}
+@media (max-width:900px){.cols{grid-template-columns:1fr !important}}
+
+.list li label{user-select:none}
+
+.ico{display:block;flex:none;object-fit:contain}
+.ing-chip{display:inline-flex;align-items:center;gap:4px;padding:2px 8px 2px 3px;border-radius:999px}
+.ing-head .ico{margin:-4px 0}
+
+.grp{margin:6px 0 8px;padding-left:8px;border-left:3px solid var(--cat)}
+.grp-name{font-weight:600;font-size:16px}
+
+.chip.faded{opacity:.42;background:transparent;border:1px dashed var(--line)}
+.chip.faded .ico{filter:grayscale(.5)}
+
+.chip small{font-size:14px}
+footer a{color:inherit}
+
+.summary + .sec{margin-top:4px;margin-bottom:12px}
+
+.list .meta{display:grid;grid-template-columns:3.4em 2.8em 2.6em;gap:6px;text-align:right;
+  font-variant-numeric:tabular-nums}
