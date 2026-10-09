@@ -2,7 +2,7 @@
 
 在 **Pokémon Sleep** 中，勾選想做的咖哩、沙拉、甜點，一次看出哪些食材會被重複使用、哪些食材用不到，幫你規劃要準備的食材。
 
-🔗 **線上使用**：（發布後在此填入網址，例如 `https://github.com/BiaoPKS/pkd-repeatIngredients`）
+🔗 **線上使用**：（發布後在此填入網址，例如 `https://biaopks.github.io/pkd-repeatIngredients'）
 
 ## 功能
 
