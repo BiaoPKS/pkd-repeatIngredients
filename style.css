@@ -45,9 +45,9 @@ button:hover{background:var(--accent-soft)}
 .ing:first-child{border-top:0}
 .ing-head{display:flex;align-items:center;gap:8px}
 .ing-name{font-weight:600}
-.badge{background:var(--cat);color:#fff;border-radius:999px;padding:0 10px;font-size:16px;font-weight:600;line-height:26px}
+.badge{background:var(--cat,var(--accent));color:#fff;border-radius:999px;padding:0 10px;font-size:16px;font-weight:600;line-height:26px}
 .bar{flex:1;height:6px;border-radius:3px;background:var(--line);overflow:hidden}
-.bar i{display:block;height:100%;background:var(--cat)}
+.bar i{display:block;height:100%;background:var(--cat,var(--accent))}
 .chips{display:flex;flex-wrap:wrap;gap:5px;margin-top:5px}
 .chip{font-size:15px;background:var(--accent-soft);border-radius:6px;padding:1px 7px}
 .chip small{color:var(--muted)}
@@ -88,3 +88,23 @@ footer a{color:inherit}
 
 .list .meta{display:grid;grid-template-columns:3.4em 2.8em 2.6em;gap:6px;text-align:right;
   font-variant-numeric:tabular-nums}
+
+/* 分頁標籤 */
+.tabbar{max-width:1280px;margin:0 auto;padding:12px 16px 0;display:flex;gap:6px;border-bottom:1px solid var(--line)}
+.tab{font-size:18px;font-weight:600;padding:8px 20px;border:1px solid var(--line);border-bottom:0;
+  border-radius:10px 10px 0 0;background:transparent;color:var(--muted);margin-bottom:-1px}
+.tab.on{background:var(--card);color:var(--ink);border-color:var(--line);border-top:3px solid var(--accent)}
+.catbar{padding-top:14px}
+
+/* 全食譜分析 */
+.col.all{--cat:var(--accent)}
+.all-counts{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.all-hint{margin:0;padding:0 14px 8px;color:var(--muted);font-size:15px}
+[data-cat="咖哩"]{--cat:var(--c-curry)}
+[data-cat="沙拉"]{--cat:var(--c-salad)}
+[data-cat="甜點"]{--cat:var(--c-dessert)}
+.cat-tag{display:inline-block;margin-right:6px;padding:0 9px;border-radius:999px;background:var(--cat);
+  color:#fff;font-size:14px;font-weight:600;line-height:24px;vertical-align:1px}
+.all-counts .cat-tag{margin-right:0}
+.chip[data-cat]{border-left:4px solid var(--cat)}
+.col.all .result{padding-top:4px}
